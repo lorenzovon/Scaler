@@ -1,0 +1,5 @@
+public static double solve(double celsius) {
+    double fahrenheit = (celsius*1.80) + 32.00 ;
+    fahrenheit = Math.round(fahrenheit*100)/100d ;
+    return fahrenheit ;
+}
