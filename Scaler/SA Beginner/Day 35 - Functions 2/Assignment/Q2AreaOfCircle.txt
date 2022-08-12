@@ -1,0 +1,14 @@
+public class Solution {
+    public int ceil(double x){
+        if( (x-(int)x) > 0  ){
+            return ((int)x + 1) ;
+        }
+        else{
+            return ((int)x) ;
+        }
+    }
+    public int solve(int A) {
+        double area = (3.1415926535*(double)A*(double)A) ;
+        return ceil(area) ;
+    }
+}
