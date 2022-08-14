@@ -1,0 +1,25 @@
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        // YOUR CODE GOES HERE
+        // Please take input and print output to standard input/output (stdin/stdout)
+        // DO NOT USE ARGUMENTS FOR INPUTS
+        // E.g. 'Scanner' for input & 'System.out' for output
+        Scanner input = new Scanner(System.in) ;
+        int N = input.nextInt() ;
+        for(int row = 1 ; row <= N ; row ++ ){
+            for(int column = 1 ; column <= N-row ; column ++ ){
+                System.out.print("0 ") ;
+            }
+            for(int column = 1 ; column <= 2*row - 1 ; column ++ ){
+                System.out.print((N-row+1)*column + " ") ;
+            }
+            for(int column = 1 ; column <= N-row ; column ++ ){
+                System.out.print("0 ") ;
+            }
+            System.out.println() ;
+        }
+    }
+}
