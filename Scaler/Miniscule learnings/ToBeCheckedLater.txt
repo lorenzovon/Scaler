@@ -1,0 +1,4 @@
+Double vs Float in java
+HCF and LCM logic
+Definition of Prime number
+Factor vs Divisor

@@ -1,0 +1,18 @@
+public class Solution {
+    // DO NOT MODIFY THE ARGUMENTS WITH "final" PREFIX. IT IS READ ONLY
+    public int ceil(double x){
+        if( (x-(int)x) > 0  ){
+            return ((int)x + 1) ;
+        }
+        else{
+            return ((int)x) ;
+        }
+    }
+    public int solve(final int A) {
+        // double pi = 3.1415926535 ;
+        double piVal = Math.PI ;
+        double radius = (double)A ;
+        double volume = ( (double) 4/3)*piVal*radius*radius*radius ;
+        return ceil(volume) ;
+    }
+}
