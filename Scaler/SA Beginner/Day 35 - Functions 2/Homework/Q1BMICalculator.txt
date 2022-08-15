@@ -1,0 +1,38 @@
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+
+    public static void BMICalculator(double height, double weight){
+        double BMI = weight/(height*height) ;
+        String classification ;
+        if(BMI<18.5){
+            classification = "Underweight" ;
+        }
+        else if( BMI < 25 ){
+            classification = "Normal" ;
+        }
+        else if( BMI < 30 ){
+            classification = "Overweight" ;
+        }
+        else{
+            classification = "Obese" ;
+        }
+        Formatter formatValue = new Formatter() ;
+        formatValue.format("%.1f", BMI) ;
+        System.out.println(classification) ;
+        System.out.println(formatValue) ;
+
+    }
+
+    public static void main(String[] args) {
+        // YOUR CODE GOES HERE
+        // Please take input and print output to standard input/output (stdin/stdout)
+        // DO NOT USE ARGUMENTS FOR INPUTS
+        // E.g. 'Scanner' for input & 'System.out' for output
+        Scanner input = new Scanner(System.in) ;
+        int height = input.nextInt() ;
+        int weight = input.nextInt() ;
+        BMICalculator((double)height/100, (double)weight) ;
+    }   
+}
