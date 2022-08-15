@@ -1,0 +1,12 @@
+public class Solution {
+    public int solve(int A, int B, int C) {
+        int maxChocolates ;
+        if( A/B < C   ){
+            maxChocolates = A/B ;
+        }
+        else{
+            maxChocolates = C ;
+        }
+        return maxChocolates ;
+    }
+}
