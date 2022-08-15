@@ -1,0 +1,18 @@
+public class Solution {
+    public boolean checkPerfectSquare(int N){
+        for(int i = 1 ; i*i <= N ; i ++ ){
+            if(i*i == N){
+                return true ;
+            }
+        }
+        return false ;
+    }
+    public int solve(int A) {
+        if(checkPerfectSquare(A)){
+            return 1 ;
+        }
+        else{
+            return 0 ;
+        }
+    }
+}
