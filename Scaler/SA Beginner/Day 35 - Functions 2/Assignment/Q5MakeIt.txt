@@ -1,0 +1,7 @@
+public class Solution {
+    public int solve(int A, int B) {
+        int totalSlices = A*3 + B ;
+        int glasses = totalSlices/2 ;
+        return glasses ;
+    }
+}
