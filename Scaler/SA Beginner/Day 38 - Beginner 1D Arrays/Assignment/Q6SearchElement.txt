@@ -1,0 +1,75 @@
+import java.lang.*;
+import java.util.*;
+import java.util.Scanner;
+
+public class Main {
+
+     public static int SearchElement(int[] data, int searchElement){
+        int size = data.length ;
+        for(int i = 0 ; i < size ; i ++ ){
+            if(data[i] == searchElement){
+                return 1 ;
+            }
+        }
+        return 0 ;
+    }
+
+    public static void main(String[] args) {
+        // YOUR CODE GOES HERE
+        // Please take input and print output to standard input/output (stdin/stdout)
+        // DO NOT USE ARGUMENTS FOR INPUTS
+        // E.g. 'Scanner' for input & 'System.out' for output
+        Scanner input = new Scanner(System.in) ;
+        int T = input.nextInt() ;
+        for(int i = 1 ; i <= T ; i ++ ){
+            int size = input.nextInt() ;
+            int[] data = new int[size] ;
+            for(int j = 0 ; j < size ; j ++ ){
+                data[j] = input.nextInt() ;
+            }
+            int B = input.nextInt() ;
+            System.out.println(SearchElement(data, B)) ;
+        }
+
+    }
+
+    // public static int ScanElement(){
+    //     Scanner input = new Scanner(System.in) ;
+    //     int element = input.nextInt() ;
+    //     return element ;
+    // }
+
+    // public static int[] ScanEachArray(int elements){
+    //     Scanner input = new Scanner(System.in) ;
+    //     int[] data = new int[elements] ;
+    //     for(int i = 0 ; i < elements ; i ++ ){
+    //         data[i] = input.nextInt() ;
+    //     }
+    //     return data ;
+    // }
+
+    // public static int SearchElement(int[] data, int searchElement){
+    //     int size = data.length ;
+    //     for(int i = 0 ; i < size ; i ++ ){
+    //         if(data[i] == searchElement){
+    //             return 1 ;
+    //         }
+    //     }
+    //     return 0 ;
+    // }
+
+    // public static void main(String[] args) {
+    //     // YOUR CODE GOES HERE
+    //     // Please take input and print output to standard input/output (stdin/stdout)
+    //     // DO NOT USE ARGUMENTS FOR INPUTS
+    //     // E.g. 'Scanner' for input & 'System.out' for output
+    //     int testcases = ScanElement() ;
+    //     while(testcases > 0 ){
+    //         int elements = ScanElement() ;
+    //         int[] data = ScanEachArray(elements) ;
+    //         int searchElement = ScanElement() ;
+    //         System.out.println(SearchElement(data, searchElement)) ;
+    //         testcases -- ;
+    //     }
+    // }
+}
