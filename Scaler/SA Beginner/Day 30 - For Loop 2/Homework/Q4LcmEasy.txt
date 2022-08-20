@@ -1,0 +1,22 @@
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        // YOUR CODE GOES HERE
+        // Please take input and print output to standard input/output (stdin/stdout)
+        // DO NOT USE ARGUMENTS FOR INPUTS
+        // E.g. 'Scanner' for input & 'System.out' for output
+        Scanner input = new Scanner(System.in) ;
+        int A = input.nextInt() ;
+        int B = input.nextInt() ;
+        int hcf = 1 ;
+        int least = A>B ? B : A  ;
+        for(int i = 2 ; i <= least ; i ++ ){
+            if( A%i == 0 && B%i == 0 ){
+                hcf = i ;
+            }
+        }
+        System.out.println((A*B)/hcf) ;
+    }
+}
