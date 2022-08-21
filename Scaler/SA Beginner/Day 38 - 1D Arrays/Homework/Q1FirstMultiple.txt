@@ -1,0 +1,11 @@
+public static int first_multiple(int[] ls, int x) {
+    // Write your code here
+    int size = ls.length ;
+    for(int i = 0 ; i < size ; i ++ ){
+        if(ls[i]%x == 0){
+            return ls[i] ;
+        }
+    }
+    return -1 ;
+}
+
