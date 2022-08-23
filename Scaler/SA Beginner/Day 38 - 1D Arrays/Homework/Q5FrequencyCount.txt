@@ -1,0 +1,14 @@
+public class Solution {
+    public int[] solve(int[] A) {
+        int size = A.length ;
+        int[] frequency = new int[size] ;
+        for(int i = 0 ; i < size ; i ++ ){
+            for(int j = 0 ; j < size ; j ++ ){
+                if( A[i] == A[j] ){
+                    frequency[j] ++ ; 
+                }
+            }
+        }
+        return frequency ;
+    }
+}
