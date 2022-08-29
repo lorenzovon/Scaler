@@ -1,0 +1,11 @@
+public class Solution {
+    // DO NOT MODIFY THE ARGUMENTS WITH "final" PREFIX. IT IS READ ONLY
+    public int[] solve(final int[] A, int B) {
+        int size = A.length ;
+        int output[] = new int[size] ;
+        for(int i = 0 ; i < size ; i ++ ){
+            output[i] = A[i] + B ;
+        }
+        return output ;
+    }
+}
