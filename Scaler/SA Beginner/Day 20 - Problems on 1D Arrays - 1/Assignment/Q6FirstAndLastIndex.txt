@@ -1,0 +1,24 @@
+public class Solution {
+    public int[] solve(int[] A, int B) {
+        int indices[] = new int[2] ;
+        int size = A.length ;
+        boolean found = false ;
+        int startIndex = -1 ;
+        int endIndex = -1 ;
+        for(int i = 0 ; i < size ; i ++ ){
+            if(A[i] == B){
+                if(!found){
+                    startIndex = i ;
+                    endIndex = i ;
+                }
+                if(found){
+                    endIndex = i ;
+                }
+                found = true ;
+            }
+        }
+        indices[0] = startIndex ;
+        indices[1] = endIndex ;
+        return indices ;
+    }
+}
