@@ -1,0 +1,24 @@
+public class Solution {
+    public long countFactors(long A){
+        long count = 0L ;
+        for(long i = 1L ; i*i <= A ; i ++ ){
+            if(A%i == 0){
+                if(A/i == i){
+                    count ++ ;
+                }
+                else{
+                    count += 2 ;
+                }
+            }
+        }
+        return count ;
+    }
+    public int solve(long A) {
+        if(countFactors(A)==2){
+            return 1 ;
+        }
+        else{
+            return 0 ;
+        }
+    }
+}
