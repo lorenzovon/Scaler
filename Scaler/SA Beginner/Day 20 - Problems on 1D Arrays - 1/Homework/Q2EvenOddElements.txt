@@ -1,0 +1,54 @@
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+    public static int absolute(int x, int y){
+        int difference = x - y ;
+        if(difference > 0 ){
+            return difference ;
+        }
+        else{
+            return (-1 * difference) ;
+        }
+    }
+
+    public static int countEven(int x[]){
+        int size = x.length ;
+        int count = 0 ;
+        for(int i = 0 ; i < size ; i ++ ){
+            if( x[i]%2 == 0 ){
+                count ++ ;
+            }
+        }
+        return count ;
+    }
+
+    public static int countOdd(int x[]){
+        int size = x.length ;
+        int count = 0 ;
+        for(int i = 0 ; i < size ; i ++ ){
+            if( x[i]%2 == 1 ){
+                count ++ ;
+            }
+        }
+        return count ;
+    }
+
+    public static void main(String[] args) {
+        // YOUR CODE GOES HERE
+        // Please take input and print output to standard input/output (stdin/stdout)
+        // DO NOT USE ARGUMENTS FOR INPUTS
+        // E.g. 'Scanner' for input & 'System.out' for output
+        Scanner input = new Scanner(System.in) ;
+        int T = input.nextInt() ;
+        while( T > 0 ){
+            int size = input.nextInt() ;
+            int data[] = new int[size] ;
+            for(int i = 0 ; i < size ; i ++ ){
+                data[i] = input.nextInt() ;
+            }
+            System.out.println(absolute(countEven(data), countOdd(data))) ;
+            T -- ;
+        }
+    }
+}
