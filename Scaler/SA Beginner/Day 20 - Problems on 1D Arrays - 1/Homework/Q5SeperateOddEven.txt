@@ -1,0 +1,45 @@
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+
+    public static void printEven(int x[]){
+        int size = x.length ; 
+        for(int i = 0 ; i < size ; i ++ ){
+            if( x[i]%2 == 0 ){
+                System.out.print(x[i] + " ") ;
+            }
+        }
+        System.out.println() ;
+        // return count ;
+    }
+
+    public static void printOdd(int x[]){
+        int size = x.length ;
+        for(int i = 0 ; i < size ; i ++ ){
+            if( x[i]%2 == 1 ){
+                System.out.print(x[i] + " ") ;
+            }
+        }
+        System.out.println() ;
+    }
+
+    public static void main(String[] args) {
+        // YOUR CODE GOES HERE
+        // Please take input and print output to standard input/output (stdin/stdout)
+        // DO NOT USE ARGUMENTS FOR INPUTS
+        // E.g. 'Scanner' for input & 'System.out' for output
+        Scanner input = new Scanner(System.in) ;
+        int T = input.nextInt() ;
+        while( T > 0 ){
+            int size = input.nextInt() ;
+            int data[] = new int[size] ;
+            for(int i = 0 ; i < size ; i ++ ){
+                data[i] = input.nextInt() ;
+            }
+            printOdd(data) ;
+            printEven(data) ;
+            T -- ;
+        }
+    }
+}
