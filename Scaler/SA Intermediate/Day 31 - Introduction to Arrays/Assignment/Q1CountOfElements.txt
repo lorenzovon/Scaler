@@ -1,0 +1,28 @@
+public class Solution {
+
+    public int max(int[] data){
+        int size = data.length ;
+        int maxData = data[0] ;
+        for(int i = 1 ; i < size ; i ++ ){
+            if(maxData < data[i] ){
+                maxData = data[i] ;
+            }
+        }
+        return maxData ;
+    }
+
+    public int countOccurrences(int[] data, int element){
+        int size = data.length ;
+        int occurrence = 0 ;
+        for(int i = 0 ; i < size ; i ++ ){
+            if(data[i] == element){
+                occurrence ++ ;
+            }
+        }
+        return occurrence ;
+    }
+
+    public int solve(int[] A) {
+        return (A.length - countOccurrences(A, max(A))) ;
+    }
+}
