@@ -1,0 +1,15 @@
+public class Solution {
+    // DO NOT MODIFY THE ARGUMENTS WITH "final" PREFIX. IT IS READ ONLY
+    public int[] reverse(int[] x){
+        int size = x.length ;
+        for(int i = 0 ; i < size/2 ; i ++ ){
+            int temp = x[i] ;
+            x[i] = x[size-1 - i] ;
+            x[size -1 - i] = temp ;
+        }
+        return x ;
+    }
+    public int[] solve(final int[] A) {
+        return reverse(A) ;
+    }
+}
