@@ -1,0 +1,22 @@
+public class Solution {
+    public int maximum(int[] data){
+        int size = data.length ;
+        int max = data[0] ;
+        for(int i = 0 ; i < size ; i ++ ){
+            if( max < data[i] ){
+                max = data[i] ;
+            }
+        }
+        return max ;
+    }
+
+    public int solve(int[] A) {
+        int max = maximum(A) ;
+        int minimumTime = 0 ;
+        int size = A.length ;
+        for(int i = 0 ; i < size ; i ++ ){
+            minimumTime += (max - A[i]) ;
+        }
+        return minimumTime ;
+    }
+}
