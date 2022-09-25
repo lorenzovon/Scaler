@@ -1,0 +1,9 @@
+public class Solution {
+    public int[] solve(int[] A) {
+        int size = A.length ;
+        for(int i = 1 ; i < size ; i ++ ){
+            A[i] = A[i] + A[i-1] ;
+        }
+        return A ;
+    }
+}
