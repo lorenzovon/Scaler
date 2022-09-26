@@ -1,0 +1,22 @@
+public class Solution {
+
+    public int[] prefix(int[] data){
+        int size = data.length ;
+        for(int i = 1 ; i < size ; i ++ ){
+            data[i] += data[i-1] ;
+        }
+        return data ;
+    }
+
+    public int solve(int[] A) {
+        prefix(A) ;
+        int size = A.length ;
+        // int index = -1 ;
+        for(int i = 1 ; i < size ; i ++ ){
+            if( A[i-1] == A[size-1] - A[i] ){
+                return i ;
+            }
+        }
+        return -1 ;
+    }
+}
