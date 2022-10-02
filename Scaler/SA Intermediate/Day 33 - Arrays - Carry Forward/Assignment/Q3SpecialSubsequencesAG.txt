@@ -1,0 +1,38 @@
+public class Solution {
+
+    public long optimized(String data, String subsequence){
+        int size = data.length() ;
+        int count = 0 ;
+        long pairs = 0 ;
+        for(int i = 0 ; i < size ; i ++ ){
+            if( data.charAt(i) == subsequence.charAt(0) ){
+                count ++ ;
+            }
+            else if( data.charAt(i) == subsequence.charAt(1) ){
+                pairs += count ;
+            }
+        }
+        return pairs ;
+    }
+
+    public long modulo(long value, long mod){
+        if(value < mod ){
+            return value ;
+        }
+        else{
+            return value % mod ;
+        }
+    }
+
+    public int exponential(int element, int power){
+        int output = 1 ;
+        for(int i = 1 ; i <= power ; i ++ ){
+            output *= element ;
+        }
+        return output ;
+    }
+
+    public int solve(String A) {
+        return (int) modulo(optimized(A, "AG"),(long) exponential(10, 9)+7) ;
+    }
+}
