@@ -1,0 +1,26 @@
+public class Solution {
+
+    public int[] solve(int[] A, int[] B) {
+        HashMap <Integer, Integer> frequency = new HashMap<>() ;
+        int inputSize = A.length ;
+        for(int i = 0 ; i < inputSize ; i ++ ){
+            if( frequency.containsKey(A[i]) ){
+                frequency.put( A[i] , frequency.get(A[i]) + 1 ) ;
+            }
+            else{
+                frequency.put( A[i] , 1 ) ;
+            }
+        }
+        int queries = B.length ;
+        int[] output = new int[queries] ;
+        for(int i = 0 ; i < queries ; i ++ ){
+            if( frequency.containsKey(B[i]) ){
+                output[i] = frequency.get(B[i]) ;
+            }
+            else{
+                output[i] = 0 ;
+            }
+        }
+        return output ;
+    }
+}
