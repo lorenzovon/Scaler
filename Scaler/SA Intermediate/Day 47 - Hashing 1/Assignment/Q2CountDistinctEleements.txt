@@ -1,0 +1,11 @@
+public class Solution {
+    public int solve(int[] A) {
+        HashMap <Integer, Integer> frequency = new HashMap<>() ;
+        // HashSet <Integer> distinctElements = new HashSet<>() ;
+        int inputSize = A.length ;
+        for(int i = 0 ; i < inputSize ; i ++ ){
+            frequency.put( A[i] , 1 ) ;
+        }
+        return frequency.size() ;
+    }
+}
