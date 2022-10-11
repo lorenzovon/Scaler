@@ -1,0 +1,21 @@
+public class Solution {
+    public int solve(int[] A) {
+        HashMap <Integer, Integer> frequency = new HashMap<>() ;
+        int inputSize = A.length ;
+        for(int i = 0 ; i < inputSize ; i ++ ){
+            if( frequency.containsKey(A[i]) ){
+                frequency.put( A[i] , frequency.get(A[i]) + 1 ) ;
+            }
+            else{
+                frequency.put( A[i] , 1 ) ;
+            }
+        }
+        int frequencyOne = 0 ;
+        for(int i = 0 ; i < inputSize ; i ++ ){
+            if( frequency.get(A[i]) == 1 ){
+                frequencyOne ++ ;
+            }
+        }
+        return frequencyOne ;
+    }
+}
