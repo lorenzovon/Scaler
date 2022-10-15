@@ -1,0 +1,12 @@
+public static ArrayList<Integer> solve(ArrayList<Integer> arr) {
+    // Complete function template here
+
+    ArrayList <Integer> divisible = new ArrayList <Integer> () ;
+    int size = arr.size() ;
+    for(int i = 0 ; i < size ; i ++ ){
+        if( arr.get(i) % 35 == 0 ){
+            divisible.add(arr.get(i)) ;
+        }
+    }
+    return divisible ;
+}
