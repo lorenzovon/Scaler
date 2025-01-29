@@ -1,0 +1,27 @@
+public class Solution {
+    public int max(int[] x){
+        int size = x.length ;
+        int maximum = x[0] ;
+        for(int i = 0 ; i < size ; i ++ ){
+            if(maximum < x[i] ){
+                maximum = x[i] ;
+            }
+        }
+        return maximum ;
+    }
+
+    public int min(int[] x){
+        int size = x.length ;
+        int minimum = x[0] ;
+        for(int i = 0 ; i < size ; i ++ ){
+            if(minimum > x[i] ){
+                minimum = x[i] ;
+            }
+        }
+        return minimum ;
+    }
+
+    public int solve(int[] A) {
+        return (max(A) + min(A) ) ;
+    }
+}
