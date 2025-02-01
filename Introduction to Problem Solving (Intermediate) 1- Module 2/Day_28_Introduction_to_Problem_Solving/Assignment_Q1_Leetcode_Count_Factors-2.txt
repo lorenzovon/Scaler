@@ -1,0 +1,18 @@
+import java.util.ArrayList ;
+
+class Solution {
+    
+    public int commonFactors(int a, int b) {
+        int countOfCommonFactors = 0 ;
+        int smallest = a ;
+        if ( a > b ) {
+            smallest = b ;
+        }
+        for ( int i = 1 ; i <= smallest ; i ++ ) {
+            if ( ( a % i == 0 ) && ( b % i == 0 ) ) {
+                countOfCommonFactors ++ ;
+            }
+        }
+        return countOfCommonFactors ;
+    }
+}
