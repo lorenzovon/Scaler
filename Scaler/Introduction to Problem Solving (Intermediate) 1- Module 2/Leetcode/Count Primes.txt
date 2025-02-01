@@ -1,0 +1,47 @@
+import java.util.Arrays ;
+
+class Solution {
+
+    public boolean isPrime( int n ) {
+        if ( n < 2 ) {
+            return false ;
+        }
+
+        for ( int i = 2 ; i <= n/i ; i ++ ){
+            if( n % i == 0 ){
+                return false ;
+            }
+        }
+
+        return true ;
+    }
+
+    public int allPrimesSieveEratosthenes( int n ){
+        boolean[] isPrimeNumber = new boolean[n+1] ;
+        Arrays.fill(isPrimeNumber, true) ;
+        int totalPrimes = 0 ;
+        isPrimeNumber[0] = false ;
+        isPrimeNumber[1] = false ;
+        for( int i = 2 ; i <= n/i ; i++ ) {
+            if( isPrimeNumber[i] == false ){
+                continue ;
+            }
+            for( int j = 2 ; i*j <= n ; j ++ ) {
+                isPrimeNumber[i*j] = false ;
+            }
+        }
+        for( int i = 0 ; i <n ; i ++ ){
+            if(isPrimeNumber[i] == true){
+                totalPrimes ++ ;
+            }
+        }
+        return totalPrimes ;
+    }
+
+    public int countPrimes(int n) {
+        if( n < 2 ){
+            return 0 ;
+        }
+        return allPrimesSieveEratosthenes(n) ;
+    }
+}
