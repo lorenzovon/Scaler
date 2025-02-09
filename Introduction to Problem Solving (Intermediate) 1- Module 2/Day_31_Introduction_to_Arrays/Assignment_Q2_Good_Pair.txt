@@ -1,0 +1,19 @@
+public class Solution {
+
+    public int bruteForce(int[] data, int element){
+        int size = data.length ;
+        int count = 0 ;
+        for(int i = 0 ; i < size -1 ; i ++ ){
+            for(int j = i + 1 ; j < size ; j ++ ){
+                if( element - data[i] - data[j] == 0){
+                    return 1 ;
+                }
+            }
+        }
+        return count ;
+    }
+
+    public int solve(int[] A, int B) {
+        return bruteForce(A, B) ;
+    }
+}
