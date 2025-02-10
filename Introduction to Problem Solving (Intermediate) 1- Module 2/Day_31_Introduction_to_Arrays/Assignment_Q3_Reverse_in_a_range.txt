@@ -1,0 +1,23 @@
+public class Solution {
+
+    public void reverse(int[] data, int start, int end){
+        int size = data.length ;
+        int i = start ;
+        int j = end ;
+        while( i < j ){
+            int temp = data[i] ;
+            data[i] = data[j] ;
+            data[j] = temp ;
+            // data[i] = data[i] + data[j] ;
+            // data[j] = data[i] - data[j] ;
+            // data[i] = data[i] - data[j] ;
+            i ++ ;
+            j -- ;
+        }
+    }
+
+    public int[] solve(int[] A, int B, int C) {
+        reverse(A, B, C) ;
+        return A ;
+    }
+}

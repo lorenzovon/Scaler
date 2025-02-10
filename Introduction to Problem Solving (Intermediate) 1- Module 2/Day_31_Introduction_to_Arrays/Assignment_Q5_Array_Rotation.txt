@@ -1,0 +1,30 @@
+public class Solution {
+
+    public void swap(int[] data, int i, int j){
+        int temp = data[i] ;
+        data[i] = data[j] ;
+        data[j] = temp ;
+    }
+
+    public void reverse(int[] data, int start, int end){
+        int size = data.length ;
+        while( start < end ){
+            swap(data, start, end) ;
+            start ++ ;
+            end -- ;
+        }
+    }
+
+    public int modulo(int rotations, int size){
+        return rotations % size ;
+    }
+
+    public int[] solve(int[] A, int B) {
+        int size = A.length ;
+        reverse(A, 0, size - 1 ) ;
+        B = modulo(B, size) ;
+        reverse(A, 0, B-1) ;
+        reverse(A, B, size -1 ) ;
+        return A ;
+    }
+}
