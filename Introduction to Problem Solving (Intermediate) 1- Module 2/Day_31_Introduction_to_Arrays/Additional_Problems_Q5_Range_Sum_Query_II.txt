@@ -1,0 +1,23 @@
+public class Solution {
+
+    public int sum(int[] data, int start, int end){
+        int size = data.length ;
+        int aggregate = 0 ;
+        while(start <= end){
+            aggregate += data[start] ;
+            start ++ ;
+        }
+        return aggregate ;
+    }
+
+    public int[] solve(int[] A, int[][] B) {
+        int queries = B.length ;
+        int[] store = new int[queries] ;
+        for(int i = 0 ; i < queries ; i ++ ){
+            int start = B[i][0] - 1 ;
+            int end = B[i][1] - 1 ;
+            store[i] = sum(A, start, end) ;
+        }
+        return store ;
+    }
+}
