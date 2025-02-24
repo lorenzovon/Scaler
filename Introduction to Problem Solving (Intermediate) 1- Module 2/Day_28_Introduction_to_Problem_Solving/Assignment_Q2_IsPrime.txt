@@ -1,0 +1,39 @@
+public class Solution {
+    public long countFactors(long A){
+        long count = 0L ;
+        for(long i = 1L ; i <= A/i ; i ++ ){
+            if(A%i == 0){
+                if(A/i == i){
+                    count ++ ;
+                }
+                else{
+                    count += 2 ;
+                }
+            }
+        }
+        return count ;
+    }
+    public int solve(long A) {
+        if(countFactors(A)==2){
+            return 1 ;
+        }
+        else{
+            return 0 ;
+        }
+    }
+
+    public long factors(long A) {
+        long count = 0L ;
+        for (int i = 1 ; i*i <= A ; i++) {
+            if( A%i == 0 ){
+                if( i*i == A  ){
+                    count += 1 ;
+                }
+                else{
+                    count += 2 ;
+                }
+            }
+        }
+        return count ;
+    }
+}
