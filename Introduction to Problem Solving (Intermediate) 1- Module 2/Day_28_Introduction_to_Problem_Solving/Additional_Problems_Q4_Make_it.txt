@@ -1,0 +1,14 @@
+public class Solution {
+    public int totalSlices(int mangoes, int slices){
+        int count = (mangoes*3) + slices ;
+        return count ;
+    }
+
+    public int glasses(int slices){
+        return slices/2 ;
+    }
+
+    public int solve(int A, int B) {
+        return glasses(totalSlices(A, B)) ;
+    }
+}
