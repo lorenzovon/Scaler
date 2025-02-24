@@ -1,0 +1,13 @@
+public class Solution {
+    public int perfectSquareRoot(int A){
+        for(int i = 1 ; i <= A/i ; i ++ ){
+            if(i == A/i){
+                return i ;
+            }
+        }
+        return -1 ;
+    }
+    public int solve(int A) {
+        return perfectSquareRoot(A) ;
+    }
+}
