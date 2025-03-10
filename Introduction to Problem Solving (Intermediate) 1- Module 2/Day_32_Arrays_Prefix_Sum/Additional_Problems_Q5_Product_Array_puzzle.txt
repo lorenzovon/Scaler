@@ -1,0 +1,25 @@
+public class Solution {
+
+    public int product(int[] data, int index){
+        int length = data.length ;
+        int prod = 1 ;
+        for(int i = 0 ; i < length ; i ++ ){
+            if( i == index ){
+                continue ;
+            }
+            else{
+                prod *= data[i] ;
+            }
+        }
+        return prod ;
+    }
+
+    public int[] solve(int[] A) {
+        int length = A.length ;
+        int[] output = new int[length] ;
+        for(int i = 0 ; i < length ; i ++ ){
+            output[i] = product(A, i) ;
+        }
+        return output ;
+    }
+}

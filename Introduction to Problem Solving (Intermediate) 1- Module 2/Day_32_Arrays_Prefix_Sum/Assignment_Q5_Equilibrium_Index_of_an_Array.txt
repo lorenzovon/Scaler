@@ -1,0 +1,110 @@
+public class Solution {
+
+    public int sumLeft(int[] prefixData, int index ){
+        if(index == 0 ){
+            return 0 ;
+        }
+        else{
+            return prefixData[index-1] ;
+        }
+    }
+
+    public int sumRight(int[] prefixData, int index ){
+        int size = prefixData.length ;
+        return prefixData[size-1] - prefixData[index] ;
+    }
+
+    public int[] prefix(int[] data){
+        int size = data.length ;
+        int[] prefix = new int[size] ;
+        prefix[0] = data[0] ;
+        for(int i = 1 ; i < size ; i ++ ){
+            prefix[i] = prefix[i-1] + data[i] ;
+        }
+        return prefix ;
+    }
+
+    public int equilibriumIndex(int[] data){
+        int size = data.length ;
+        int[] prefixData = prefix(data) ;
+        for(int i = 0 ; i < size ; i ++ ){
+            if( sumLeft(prefixData, i) == sumRight(prefixData, i) ){
+                return i ;
+            }
+        }
+        return -1 ;
+    }
+
+    public int minEquilibriumIndex(int[] data){
+        int size = data.length ;
+        int[] front = prefixFromStart(data) ;
+        int[] end = prefixFromEnd(data) ;
+        for(int i = 0 ; i < size ; i ++ ){
+            if( front[i] == end[i] ){
+                return i ;
+            }
+        }
+        return -1 ;
+    }
+
+    public int countEquilibriumIndices(int[] data){
+        int size = data.length ;
+        int[] front = prefixFromStart(data) ;
+        int[] end = prefixFromEnd(data) ;
+        int count = 0 ;
+        for(int i = 0 ; i < size ; i ++ ){
+            if( front[i] == end[i] ){
+                count ++ ;
+            }
+        }
+        return count ;
+    }
+
+    public int[] prefixFromStart(int[] data){
+        int size = data.length ;
+        int[] prefix = new int[size] ;
+        prefix[0] = data[0] ;
+        for(int i = 1 ; i < size ; i ++ ){
+            prefix[i] = prefix[i-1] + data[i] ;
+        }
+        return prefix ;
+    }
+
+    public int[] prefixFromEnd(int[] data){
+        int size = data.length ;
+        int[] prefix = new int[size] ;
+        prefix[size-1] = data[size-1] ;
+        for(int i = size-2 ; i >= 0 ; i -- ){
+            prefix[i] = prefix[i+1] +  data[i] ;
+        }
+        return prefix ;
+    }
+
+    public int equilibriumIndexOptimized(int[] data){
+        int size = data.length ;
+        int[] prefixData = prefix(data) ;
+        // int count = 0 ;
+        for(int i = 0 ; i < size ; i ++){
+            int leftSum = 0 ;
+            if(i == 0){
+                leftSum = 0 ;
+            }
+            else{
+                leftSum = prefixData[i-1] ;
+            }
+            int rightSum = prefixData[size-1] - prefixData[i] ;
+            if( leftSum == rightSum ){
+                // count ++ ;
+                return i ;
+            }
+        }
+        // if(count == 0){
+            return -1 ;
+        // }
+        // return count ;
+    }
+
+    public int solve(int[] A) {
+        return equilibriumIndexOptimized(A) ;
+    }
+}
