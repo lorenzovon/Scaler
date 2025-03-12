@@ -2,9 +2,17 @@
 
 ## Introduction to Problem Solving (Intermediate) 1
 
+### Day 33 - Intermediate DSA: Carry forward
+
+#### Assignment
+
+##### Q3. Special subsequences AG
+> https://leetcode.com/problems/distinct-subsequences/
+
 ### Day 32 - Intermediate DSA: Arrays - Prefix Sum
 
 #### Assignment
+
 ##### Q3. Range Sum Query
 > https://leetcode.com/problems/range-sum-query-immutable/description/
 
@@ -18,6 +26,7 @@
 > https://leetcode.com/problems/find-numbers-with-even-number-of-digits/description/
 
 #### Additional problems
+
 ##### Q4. Sum of even indices
 
 ##### Q5. Product array puzzle
@@ -26,6 +35,7 @@
 ### Day 31 - Intermediate DSA: Introduction to Arrays
 
 #### Assignment
+
 ##### Q2. Good Pair
 > https://leetcode.com/problems/number-of-good-pairs/description/
 
@@ -37,6 +47,7 @@
 > https://leetcode.com/problems/rotate-array/description/
 
 #### Additional problems
+
 ##### Q1. Max Min of an Array
 
 ##### Q2. Linear Search - Multiple Occurences
@@ -55,6 +66,7 @@
 ### Day 28 - Intermediate DSA: Introduction to Problem Solving
 
 #### Assignment
+
 ##### Q1. Count Factors - 2
 > https://leetcode.com/problems/number-of-common-factors/description/
 
@@ -70,6 +82,7 @@
 > https://leetcode.com/problems/powx-n/description/
 
 #### Additional problems
+
 ##### Q1. Find Perfect Numbers
 > https://leetcode.com/problems/perfect-number/description/
 
