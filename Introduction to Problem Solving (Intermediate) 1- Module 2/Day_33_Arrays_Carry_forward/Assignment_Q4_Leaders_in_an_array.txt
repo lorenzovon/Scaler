@@ -1,0 +1,39 @@
+import java.util.ArrayList ;
+
+
+public class Solution {
+
+    public int[] ArrayListToInt(ArrayList<Integer> data){
+        int size = data.size() ;
+        int[] output = new int[size] ;
+        for(int i = 0 ; i < size ; i ++ ){
+            output[i] = data.get(i) ;
+        }
+        return output ;
+    }
+
+    public int[] leaders(int[] data){
+        int size = data.length ;
+        int max = data[size-1] ;
+        int LeadersCount = 1 ;
+        ArrayList<Integer> Leaders = new ArrayList<Integer>() ;
+        Leaders.add(max) ;
+        for(int i = size-2 ; i >= 0 ; i-- ){
+            if( data[i] > max ){
+                max = data[i] ;
+                Leaders.add(max) ;
+                LeadersCount ++ ;
+            }
+        }
+        return ArrayListToInt(Leaders) ;
+    }
+
+    public int[] solve(int[] A) {
+        // Logic
+        // Optimization as per lecture
+        // 1. Start iterating from the last index towards first
+        // 2. Store the max of those numbers while calculating
+        // 3. Now an index is leader If the max is less then that element
+        return leaders(A) ;
+    }
+}
