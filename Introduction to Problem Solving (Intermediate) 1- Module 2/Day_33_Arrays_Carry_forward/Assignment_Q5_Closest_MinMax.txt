@@ -1,0 +1,65 @@
+public class Solution {
+    public int max(int[] data){
+        int size = data.length ;
+        int output = data[0] ;
+        for(int i = 1 ; i < size ; i ++ ){
+            if( output < data[i] ){
+                output = data[i] ;
+            }
+        }
+        return output ;
+    }
+
+    public int min(int[] data){
+        int size = data.length ;
+        int output = data[0] ;
+        for(int i = 1 ; i < size ; i ++ ){
+            if( output > data[i] ){
+                output = data[i] ;
+            }
+        }
+        return output ;
+    }
+
+    public int closestMinMaxLength(int[] data){
+        int maximum = max(data) ;
+        int minimum = min(data) ;
+        int size = data.length ;
+        int minimumClosestMinMaxLength = size + 1 ;
+        if( maximum == minimum ){
+            return 1 ;
+        }
+        else{
+            for(int i = 0 ; i < size ; i ++ ){
+                if( data[i] == maximum ){
+                    for( int j = i + 1 ; j < size ; j ++ ){
+                        if( data[j] == minimum ){
+                            int currentLength = j - i + 1 ;
+                            if( currentLength < minimumClosestMinMaxLength ){
+                                minimumClosestMinMaxLength = currentLength ;
+                                break ;
+                            }
+                        }
+                    }
+                }
+                else if( data[i] == minimum ){
+                    for( int j = i + 1 ; j < size ; j ++ ){
+                        if( data[j] == maximum ){
+                            int currentLength = j - i + 1 ;
+                            if( currentLength < minimumClosestMinMaxLength ){
+                                minimumClosestMinMaxLength = currentLength ;
+                                break ;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return minimumClosestMinMaxLength ;
+    }
+
+    public int solve(int[] A) {
+        return closestMinMaxLength(A) ;
+    }
+}
