@@ -1,4 +1,5 @@
 public class Solution {
+
     public int max(int[] data){
         int size = data.length ;
         int output = data[0] ;
@@ -59,7 +60,48 @@ public class Solution {
         return minimumClosestMinMaxLength ;
     }
 
+    public int least(int a, int b){
+        if( a > b ){
+            return b ;
+        }
+        else{
+            return a ;
+        }
+    }
+
+    public int closestMinMaxLengthOptimized(int[] data){
+        int maximum = max(data) ;
+        int minimum = min(data) ;
+        int size = data.length ;
+        int output = size + 1 ;
+        int minimum_index = -1 ;
+        int maximum_index = -1 ;
+        if( maximum == minimum ){
+            return 1 ;
+        }
+        else{
+            for( int i = 0 ; i < size ; i ++ ){
+                if( data[i] == minimum ){
+                    if( maximum_index != -1 ){
+                        int currentLength = i - maximum_index + 1 ;
+                        output = least(output, currentLength) ; 
+                    }
+                    minimum_index = i ;
+                }
+                else if( data[i] == maximum ){
+                    if( minimum_index != -1 ){
+                        int currentLength = i - minimum_index + 1 ;
+                        output = least(output, currentLength) ;
+                    }
+                    maximum_index = i ;
+                }
+            }
+            return output ;
+        }
+    }
+
     public int solve(int[] A) {
-        return closestMinMaxLength(A) ;
+        // return closestMinMaxLength(A) ;
+        return closestMinMaxLengthOptimized(A) ;
     }
 }

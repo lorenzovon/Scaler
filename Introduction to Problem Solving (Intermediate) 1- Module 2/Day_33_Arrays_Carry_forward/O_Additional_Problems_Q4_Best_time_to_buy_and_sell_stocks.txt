@@ -1,0 +1,53 @@
+public class Solution {
+    // DO NOT MODIFY THE ARGUMENTS WITH "final" PREFIX. IT IS READ ONLY
+    public int maximum(int[] data){
+        int size = data.length ;
+        int output = data[0] ;
+        for(int i = 0 ; i < size ; i ++ ){
+            if( output < data[i] ){
+                output = data[i] ;
+            }
+        }
+        return output ;
+    }
+
+    public int minimum(int[] data){
+        int size = data.length ;
+        int output = data[0] ;
+        for(int i = 0 ; i < size ; i ++ ){
+            if( output > data[i] ){
+                output = data[i] ;
+            }
+        }
+        return output ;
+    }
+
+    public int maximumPossibleProfit(int[] data){
+        // In this code, the requirement is to ensure the min index is lower than max index
+        // Since we can't sell a stock before we buy it
+        // First we have to check the indices which ensure that the difference is highest, even If that couldn't be maximum and minimum 
+
+        // Brute force approach
+        int size = data.length ;
+        int output = 0 ;
+        for(int i = size - 1 ; i >= 0 ; i -- ){
+            for(int j = i-1 ; j >= 0 ; j -- ){
+                int currentmaximum = data[i] - data[j] ;
+                if( currentmaximum > output ){
+                    output = currentmaximum ;
+                }
+            }
+        }
+        return output ;
+    }
+
+    public int maxProfit(final int[] A) {
+        if(A.length == 0){
+            return 0 ;
+        }
+        else{
+            return maximumPossibleProfit(A) ;
+        }
+        // return (maximum(A) - minimum(A)) ;
+    }
+}
